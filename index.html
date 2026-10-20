@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#120b26">
+<title>DEVIS Enterprise | ICT, Solar Energy &amp; AI Solutions · Randburg</title>
+<meta name="description" content="DEVIS Enterprise (Pty) Ltd delivers ICT hardware, software and networking, business VOIP and connectivity through Devis-ISP, residential and commercial solar energy systems, and custom AI tools for CRM, compliance and automation. Randburg, Gauteng.">
+<meta name="author" content="DEVIS Enterprise">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DEVIS Enterprise | ICT, Solar &amp; AI Solutions">
+<meta property="og:description" content="One partner for your technology, your energy and your automation: ICT, VOIP and connectivity, solar and AI.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary:   {DEFAULT:'#6c2bd9', 50:'#f3edfd', 100:'#e4d7fb', 200:'#c9aff7', 300:'#a983f1', 400:'#8a55e6', 500:'#6c2bd9', 600:'#5a22b8', 700:'#481b93', 800:'#36146e', 900:'#230d48'},
+        accent:    {DEFAULT:'#f2a900', 50:'#fef7e0', 100:'#fdecb3', 200:'#fbd966', 300:'#f8c733', 400:'#f5b81a', 500:'#f2a900', 600:'#c98c00', 700:'#9c6d00', 800:'#704e00', 900:'#432f00'},
+        flame:     {DEFAULT:'#ff6b00', light:'#ff8a33', dark:'#cc5600'},
+        ink:       {DEFAULT:'#120b26', 900:'#0b0618', 800:'#120b26', 700:'#1b1236', 600:'#251a47', 500:'#33265c'},
+        mist:      {DEFAULT:'#f6f4fb', dark:'#ebe7f5'}
+      },
+      fontFamily: {
+        display: ['Sora', 'system-ui', 'sans-serif'],
+        sans:    ['Inter', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; color:#1f1a33; background:#fff; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4,.font-display { font-family: Sora, system-ui, sans-serif; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(40px) } to { opacity:1; transform:translateY(0) } }
+  @keyframes floaty { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-10px) } }
+  @keyframes pulseRing { 0% { box-shadow:0 0 0 0 rgba(242,169,0,.55) } 70% { box-shadow:0 0 0 14px rgba(242,169,0,0) } 100% { box-shadow:0 0 0 0 rgba(242,169,0,0) } }
+  @keyframes scrollDot { 0% { transform:translateY(0); opacity:1 } 80% { transform:translateY(14px); opacity:0 } 100% { opacity:0 } }
+  .fade-up { animation: fadeUp .9s cubic-bezier(.22,1,.36,1) both; }
+  .d1 { animation-delay:.1s } .d2 { animation-delay:.25s } .d3 { animation-delay:.4s } .d4 { animation-delay:.55s } .d5 { animation-delay:.7s }
+
+  .reveal { opacity:0; transform:translateY(36px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal.r2 { transition-delay:.1s } .reveal.r3 { transition-delay:.2s } .reveal.r4 { transition-delay:.3s }
+
+  /* Parallax hero */
+  .hero-bg { background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&h=1080&fit=crop&q=80'); background-size:cover; background-position:center; background-attachment:fixed; }
+  .hero-overlay { background: linear-gradient(115deg, rgba(11,6,24,.96) 0%, rgba(54,20,110,.86) 48%, rgba(108,43,217,.45) 100%); }
+  .hero-grid { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%); }
+  .blob { position:absolute; border-radius:50%; filter:blur(80px); opacity:.45; pointer-events:none; }
+  .parallax-band { background-size:cover; background-position:center; background-attachment:fixed; }
+  @media (max-width:768px) { .hero-bg, .parallax-band { background-attachment:scroll; } }
+
+  .glass { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+
+  /* Nav */
+  #main-nav { transition: background .35s ease, box-shadow .35s ease, padding .35s ease; }
+  #main-nav.scrolled { background:rgba(255,255,255,.97); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); box-shadow:0 6px 30px rgba(18,11,38,.08); }
+  #main-nav .nav-link { color:rgba(255,255,255,.85); }
+  #main-nav .nav-link:hover { color:#f2a900; }
+  #main-nav.scrolled .nav-link { color:#251a47; }
+  #main-nav.scrolled .nav-link:hover { color:#6c2bd9; }
+  #main-nav .brand-name { color:#fff; }
+  #main-nav.scrolled .brand-name { color:#120b26; }
+  #main-nav .burger-line { background:#fff; }
+  #main-nav.scrolled .burger-line { background:#120b26; }
+  .nav-link { position:relative; }
+  .nav-link::after { content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:linear-gradient(90deg,#f2a900,#ff6b00); transition:width .3s ease; }
+  .nav-link:hover::after { width:100%; }
+
+  #mobile-menu { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.22,1,.36,1); }
+  #mobile-menu.open { max-height:520px; }
+  .burger-line { display:block; width:22px; height:2px; border-radius:2px; transition: transform .3s ease, opacity .3s ease; }
+  #burger.open .l1 { transform:translateY(6px) rotate(45deg); }
+  #burger.open .l2 { opacity:0; }
+  #burger.open .l3 { transform:translateY(-6px) rotate(-45deg); }
+
+  /* Buttons */
+  .btn-primary { background:linear-gradient(135deg,#f2a900,#ff6b00); color:#120b26; box-shadow:0 4px 20px rgba(242,169,0,.4); transition:transform .25s ease, box-shadow .25s ease; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(255,107,0,.5); }
+  .btn-violet { background:#6c2bd9; color:#fff; box-shadow:0 4px 20px rgba(108,43,217,.35); transition:transform .25s ease, box-shadow .25s ease, background .25s ease; }
+  .btn-violet:hover { transform:translateY(-2px); background:#5a22b8; box-shadow:0 8px 32px rgba(108,43,217,.5); }
+  .btn-outline { border:2px solid rgba(255,255,255,.6); color:#fff; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); transition:transform .25s ease, background .25s ease, border-color .25s ease; }
+  .btn-outline:hover { transform:translateY(-2px); background:rgba(255,255,255,.1); border-color:#fff; }
+
+  .section-badge { display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg,#f3edfd,#e4d7fb); color:#5a22b8; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:.4rem 1rem; border-radius:50px; }
+  .section-badge.dark { background:rgba(242,169,0,.12); color:#f8c733; border:1px solid rgba(242,169,0,.3); }
+  .accent-divider { width:48px; height:3px; background:linear-gradient(90deg,#6c2bd9,#f2a900); border-radius:4px; }
+  .accent-divider.warm { background:linear-gradient(90deg,#f2a900,#ff6b00); }
+
+  .card-lift { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease; }
+  .card-lift:hover { transform:translateY(-6px); box-shadow:0 24px 50px -12px rgba(54,20,110,.25); }
+  .icon-tile { transition: transform .35s cubic-bezier(.22,1,.36,1); }
+  .card-lift:hover .icon-tile { transform: scale(1.08) rotate(-3deg); }
+
+  .division-card { position:relative; overflow:hidden; }
+  .division-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(108,43,217,.08), rgba(242,169,0,.08)); opacity:0; transition:opacity .35s ease; }
+  .division-card:hover::before { opacity:1; }
+
+  .faq-item .faq-answer { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.22,1,.36,1); }
+  .faq-item.open .faq-answer { max-height:320px; }
+  .faq-item .chev { transition: transform .35s ease; }
+  .faq-item.open .chev { transform: rotate(180deg); }
+  .faq-item.open { border-color:#c9aff7; box-shadow:0 12px 32px -14px rgba(108,43,217,.35); }
+
+  .field { width:100%; border:1.5px solid #e4e0ef; border-radius:12px; padding:.8rem 1rem; font:inherit; font-size:.95rem; background:#fff; color:#1f1a33; transition:border-color .2s ease, box-shadow .2s ease; }
+  .field:focus { outline:none; border-color:#6c2bd9; box-shadow:0 0 0 4px rgba(108,43,217,.12); }
+  .field-dark { width:100%; border:1.5px solid rgba(255,255,255,.14); border-radius:12px; padding:.8rem 1rem; font:inherit; font-size:.95rem; background:rgba(255,255,255,.05); color:#fff; transition:border-color .2s ease, box-shadow .2s ease; }
+  .field-dark { color-scheme:dark; }
+  .field-dark::placeholder { color:rgba(255,255,255,.4); }
+  .field-dark:focus { outline:none; border-color:#f2a900; box-shadow:0 0 0 4px rgba(242,169,0,.15); }
+  .field-dark option { color:#1f1a33; }
+  .label { display:block; font-size:.82rem; font-weight:600; color:#3b3355; margin-bottom:.4rem; }
+  .label-dark { display:block; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.75); margin-bottom:.4rem; }
+  .check-pill input { position:absolute; opacity:0; pointer-events:none; }
+  .check-pill span { display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .95rem; border-radius:999px; border:1.5px solid #e4e0ef; font-size:.85rem; font-weight:500; color:#3b3355; cursor:pointer; transition:all .2s ease; user-select:none; }
+  .check-pill input:checked + span { border-color:#6c2bd9; background:#f3edfd; color:#481b93; }
+  .check-pill input:focus-visible + span { box-shadow:0 0 0 4px rgba(108,43,217,.18); }
+
+  .scroll-mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,.55); border-radius:14px; position:relative; }
+  .scroll-mouse::after { content:''; position:absolute; left:50%; top:7px; width:4px; height:8px; margin-left:-2px; border-radius:2px; background:#f2a900; animation:scrollDot 1.8s ease-in-out infinite; }
+
+  .quote-mark { font-family: Georgia, serif; line-height:1; }
+  .stat-num { background:linear-gradient(135deg,#fff,#f8c733); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  #to-top { opacity:0; pointer-events:none; transform:translateY(12px); transition:all .35s ease; }
+  #to-top.show { opacity:1; pointer-events:auto; transform:none; }
+
+  #wa-float { position:fixed; left:22px; bottom:22px; width:56px; height:56px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 4px 20px rgba(37,211,102,.4); z-index:9998; transition:transform .25s ease, box-shadow .25s ease; }
+  #wa-float:hover { transform:translateY(-3px) scale(1.04); box-shadow:0 8px 30px rgba(37,211,102,.55); }
+  #wa-float .wa-tip { position:absolute; left:66px; white-space:nowrap; background:#120b26; color:#fff; font-size:.78rem; font-weight:600; padding:.4rem .7rem; border-radius:8px; opacity:0; transform:translateX(-6px); transition:all .25s ease; pointer-events:none; }
+  #wa-float:hover .wa-tip { opacity:1; transform:none; }
+
+  .form-status { display:none; }
+  .form-status.show { display:block; }
+</style>
+  <link rel="icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
+  <link rel="shortcut icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
+  <link rel="apple-touch-icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
+  </head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="main-nav" class="fixed top-0 inset-x-0 z-50 py-4">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3" aria-label="DEVIS Enterprise home">
+      <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-800 flex items-center justify-center shadow-lg shadow-primary-900/30 ring-1 ring-white/20">
+        <span class="font-display font-extrabold text-accent text-lg leading-none">D</span>
+      </span>
+      <span class="leading-tight">
+        <span class="brand-name block font-display font-extrabold tracking-tight text-lg">DEVIS<span class="text-accent">.</span></span>
+        <span class="block text-[10px] font-semibold tracking-[0.28em] uppercase text-primary-300">Enterprise</span>
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 text-[0.92rem] font-medium">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Solutions</a>
+      <a href="#ai" class="nav-link">AI Services</a>
+      <a href="#solar" class="nav-link">Solar</a>
+      <a href="#testimonials" class="nav-link">Clients</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:+27845122999" class="nav-link text-sm font-semibold"><i class="fas fa-phone-alt mr-1.5 text-accent"></i>+27 84 512 2999</a>
+      <a href="#booking" class="btn-primary rounded-full px-5 py-2.5 text-sm font-bold">Get a Quote</a>
+    </div>
+    <button id="burger" class="lg:hidden flex flex-col gap-1 p-2" aria-label="Open menu" aria-expanded="false">
+      <span class="burger-line l1"></span><span class="burger-line l2"></span><span class="burger-line l3"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden bg-white shadow-xl mt-3">
+    <div class="px-6 py-5 flex flex-col gap-1 text-ink-600 font-medium">
+      <a href="#about" class="mobile-link py-2.5 border-b border-mist-dark">About</a>
+      <a href="#services" class="mobile-link py-2.5 border-b border-mist-dark">Solutions</a>
+      <a href="#ai" class="mobile-link py-2.5 border-b border-mist-dark">AI Services</a>
+      <a href="#solar" class="mobile-link py-2.5 border-b border-mist-dark">Solar</a>
+      <a href="#testimonials" class="mobile-link py-2.5 border-b border-mist-dark">Clients</a>
+      <a href="#faq" class="mobile-link py-2.5 border-b border-mist-dark">FAQ</a>
+      <a href="#contact" class="mobile-link py-2.5">Contact</a>
+      <a href="#booking" class="mobile-link btn-primary rounded-full px-5 py-3 text-center font-bold mt-3">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="hero-bg absolute inset-0"></div>
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="hero-grid absolute inset-0"></div>
+  <div class="blob w-96 h-96 bg-primary-500 -top-20 -left-24"></div>
+  <div class="blob w-80 h-80 bg-flame bottom-10 right-0" style="opacity:.25"></div>
+  <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-40 grid lg:grid-cols-12 gap-12 items-center w-full">
+    <div class="lg:col-span-7">
+      <div class="fade-up d1 glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wider uppercase text-white/90">
+        <span class="w-2 h-2 rounded-full bg-accent" style="animation:pulseRing 2s infinite"></span>
+        ICT &nbsp;·&nbsp; Solar &nbsp;·&nbsp; AI
+      </div>
+      <h1 class="fade-up d2 mt-6 font-display font-extrabold text-white text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.08] tracking-tight">
+        Empowering Businesses Through Innovative <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-flame-light">ICT, Solar &amp; AI</span> Solutions
+      </h1>
+      <p class="fade-up d3 mt-6 text-lg text-white/75 max-w-2xl leading-relaxed">
+        DEVIS Enterprise (Pty) Ltd brings cutting-edge ICT services, sustainable solar energy and intelligent AI-driven tools together under one roof, so your technology, your power and your automation come from a single trusted partner.
+      </p>
+      <div class="fade-up d4 mt-9 flex flex-wrap gap-4">
+        <a href="#booking" class="btn-primary rounded-full px-7 py-4 font-bold inline-flex items-center gap-2">Request a Quote <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="tel:+27845122999" class="btn-outline rounded-full px-7 py-4 font-semibold inline-flex items-center gap-2"><i class="fas fa-phone-alt text-sm"></i> Call +27 84 512 2999</a>
+      </div>
+      <div class="fade-up d5 mt-10 flex flex-wrap gap-3">
+        <div class="glass rounded-2xl px-4 py-3 flex items-center gap-3 text-white">
+          <i class="fas fa-award text-accent"></i><span class="text-sm font-medium">15+ years expertise</span>
+        </div>
+        <div class="glass rounded-2xl px-4 py-3 flex items-center gap-3 text-white">
+          <i class="fas fa-solar-panel text-accent"></i><span class="text-sm font-medium">Residential &amp; commercial solar</span>
+        </div>
+        <div class="glass rounded-2xl px-4 py-3 flex items-center gap-3 text-white">
+          <i class="fas fa-headset text-accent"></i><span class="text-sm font-medium">End-to-end support</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 hidden lg:block fade-up d4">
+      <div class="relative" style="animation:floaty 7s ease-in-out infinite">
+        <div class="glass rounded-3xl p-7 text-white">
+          <p class="text-xs font-semibold tracking-[0.25em] uppercase text-accent-300">Our divisions</p>
+          <div class="mt-5 space-y-3">
+            <a href="#services" class="flex items-center gap-4 rounded-2xl bg-white/5 hover:bg-white/10 transition p-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/30 flex items-center justify-center"><i class="fas fa-server text-primary-200"></i></span>
+              <span><span class="block font-display font-semibold">DEVIS Enterprise</span><span class="block text-xs text-white/60">Hardware, software &amp; networking</span></span>
+            </a>
+            <a href="https://www.devis-isp.co.za/" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl bg-white/5 hover:bg-white/10 transition p-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-400/20 flex items-center justify-center"><i class="fas fa-wifi text-sky-300"></i></span>
+              <span><span class="block font-display font-semibold">Devis-ISP</span><span class="block text-xs text-white/60">VOIP, connectivity &amp; hosting</span></span>
+            </a>
+            <a href="#solar" class="flex items-center gap-4 rounded-2xl bg-white/5 hover:bg-white/10 transition p-4">
+              <span class="w-11 h-11 rounded-xl bg-accent/20 flex items-center justify-center"><i class="fas fa-sun text-accent-300"></i></span>
+              <span><span class="block font-display font-semibold">DEVIS Solar</span><span class="block text-xs text-white/60">Sustainable solar energy</span></span>
+            </a>
+            <a href="#ai" class="flex items-center gap-4 rounded-2xl bg-white/5 hover:bg-white/10 transition p-4">
+              <span class="w-11 h-11 rounded-xl bg-flame/20 flex items-center justify-center"><i class="fas fa-brain text-flame-light"></i></span>
+              <span><span class="block font-display font-semibold">DEVIS AI</span><span class="block text-xs text-white/60">CRM, compliance &amp; automation</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/60 text-[10px] tracking-[0.3em] uppercase" aria-label="Scroll down">
+    <span class="scroll-mouse"></span>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="relative py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="reveal relative order-2 lg:order-1">
+      <div class="relative rounded-[28px] overflow-hidden shadow-2xl shadow-primary-900/20">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1100&h=900&fit=crop&q=80" alt="The DEVIS Enterprise team planning a client solution" class="w-full h-[440px] object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-tr from-ink-900/60 via-transparent to-transparent"></div>
+      </div>
+      <div class="absolute -bottom-8 -right-4 sm:right-8 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4 max-w-[290px]">
+        <span class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-flame flex items-center justify-center text-white text-xl shrink-0"><i class="fas fa-bullseye"></i></span>
+        <p class="text-sm text-ink-600 leading-snug"><span class="font-display font-bold text-ink block">Our mission</span>Tailored, reliable, innovative technology that helps clients reach their goals.</p>
+      </div>
+      <div class="absolute -top-6 -left-6 w-28 h-28 rounded-3xl bg-primary-100 -z-10"></div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <div class="reveal section-badge"><i class="fas fa-users text-xs"></i> Who Are We?</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink leading-tight">Bridging complex technology and seamless experiences</h2>
+      <div class="reveal r2 accent-divider mt-5"></div>
+      <p class="reveal r3 mt-6 text-ink-500/90 text-[1.05rem] leading-relaxed text-gray-600">
+        DEVIS Enterprise (Pty) Ltd is a technology solutions provider empowering businesses and individuals through innovative ICT services and cutting-edge hardware. Founded on principles of reliability, expertise and customer-centricity, we bridge the gap between complex technology and seamless user experiences.
+      </p>
+      <p class="reveal r3 mt-4 text-gray-600 leading-relaxed">
+        We are committed to excellence, customer satisfaction and continuous improvement, keeping us at the forefront of the ICT, renewable energy and AI industries.
+      </p>
+      <ul class="reveal r4 mt-8 grid sm:grid-cols-2 gap-4">
+        <li class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs shrink-0"><i class="fas fa-check"></i></span><span class="text-sm text-ink-600"><b class="font-semibold text-ink">Reliability</b><br>Systems that keep running</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs shrink-0"><i class="fas fa-check"></i></span><span class="text-sm text-ink-600"><b class="font-semibold text-ink">Expertise</b><br>Over a decade in ICT, energy &amp; AI</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs shrink-0"><i class="fas fa-check"></i></span><span class="text-sm text-ink-600"><b class="font-semibold text-ink">Customer-centric</b><br>Home users, SMEs and corporates</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs shrink-0"><i class="fas fa-check"></i></span><span class="text-sm text-ink-600"><b class="font-semibold text-ink">One partner</b><br>Four specialist divisions</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIVISIONS ============ -->
+<section id="divisions" class="py-20 bg-mist">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal section-badge"><i class="fas fa-sitemap text-xs"></i> Our Divisions</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink">Four specialists. One accountable partner.</h2>
+      <div class="reveal r2 accent-divider mx-auto mt-5"></div>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal division-card card-lift bg-white rounded-3xl p-7 border border-mist-dark">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center text-2xl"><i class="fas fa-laptop-code"></i></div>
+        <h3 class="mt-6 font-display font-bold text-lg text-ink">DEVIS Enterprise</h3>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Your one-stop destination for premium ICT solutions, including hardware, software and networking.</p>
+      </div>
+      <div class="reveal r2 division-card card-lift bg-white rounded-3xl p-7 border border-mist-dark">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl"><i class="fas fa-network-wired"></i></div>
+        <h3 class="mt-6 font-display font-bold text-lg text-ink">Devis-ISP</h3>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Enterprise-grade VOIP, internet connectivity, domain registration and hosting solutions.</p>
+        <a href="https://www.devis-isp.co.za/" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-800">Visit Devis-ISP <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+      <div class="reveal r3 division-card card-lift bg-white rounded-3xl p-7 border border-mist-dark">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center text-2xl"><i class="fas fa-solar-panel"></i></div>
+        <h3 class="mt-6 font-display font-bold text-lg text-ink">DEVIS Solar</h3>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Sustainable solar energy solutions for residential and commercial properties.</p>
+      </div>
+      <div class="reveal r4 division-card card-lift bg-white rounded-3xl p-7 border border-mist-dark">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-orange-50 text-flame flex items-center justify-center text-2xl"><i class="fas fa-robot"></i></div>
+        <h3 class="mt-6 font-display font-bold text-lg text-ink">DEVIS AI</h3>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Custom AI tools, CRM systems and compliance risk management solutions that drive business efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-7">
+        <div class="reveal section-badge"><i class="fas fa-layer-group text-xs"></i> Our Solutions</div>
+        <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink leading-tight">Comprehensive ICT, energy and AI solutions tailored to your needs</h2>
+        <div class="reveal r2 accent-divider mt-5"></div>
+      </div>
+      <p class="reveal r3 lg:col-span-5 text-gray-600 leading-relaxed">From the laptop on your desk to the panels on your roof and the software that runs your pipeline: specified, supplied, installed and supported by one team.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="reveal card-lift group rounded-3xl border border-mist-dark bg-white p-8">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-xl shadow-lg shadow-primary-500/30"><i class="fas fa-desktop"></i></div>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink">ICT Hardware &amp; Software</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed text-[0.95rem]">A comprehensive range of high-quality computer hardware, software and networking solutions for businesses and individuals.</p>
+        <a href="#booking" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all">Request a quote <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+      <article class="reveal r2 card-lift group rounded-3xl border border-mist-dark bg-white p-8">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-600 text-white flex items-center justify-center text-xl shadow-lg shadow-sky-500/30"><i class="fas fa-phone-volume"></i></div>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink">VOIP &amp; Connectivity</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed text-[0.95rem]">Reliable business-grade VOIP, internet connectivity, domain registration and hosting through our Devis-ISP division.</p>
+        <a href="https://www.devis-isp.co.za/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all">Visit Devis-ISP <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+      <article class="reveal r3 card-lift group rounded-3xl border border-mist-dark bg-white p-8">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-gradient-to-br from-flame to-primary-600 text-white flex items-center justify-center text-xl shadow-lg shadow-orange-500/30"><i class="fas fa-microchip"></i></div>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink">AI &amp; Automation</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed text-[0.95rem]">Custom AI solutions including customer relationship management, compliance risk management and process automation.</p>
+        <a href="#ai" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all">Explore AI services <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+      <article class="reveal card-lift group rounded-3xl border border-mist-dark bg-white p-8">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-flame text-white flex items-center justify-center text-xl shadow-lg shadow-amber-500/30"><i class="fas fa-solar-panel"></i></div>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink">Solar Energy Systems</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed text-[0.95rem]">Sustainable solar power solutions for residential and commercial properties, designed around how you actually use energy.</p>
+        <a href="#solar" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all">Get a solar quote <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+      <article class="reveal r2 card-lift group rounded-3xl border border-mist-dark bg-white p-8">
+        <div class="icon-tile w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center text-xl shadow-lg shadow-emerald-500/30"><i class="fas fa-screwdriver-wrench"></i></div>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink">Installation &amp; Support</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed text-[0.95rem]">Professional installation and ongoing maintenance for all your ICT, solar and AI systems, ensuring optimal performance.</p>
+        <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all">Talk to support <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+      <article class="reveal r3 rounded-3xl p-8 bg-gradient-to-br from-primary-600 via-primary-700 to-ink text-white relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-accent/20 blur-2xl"></div>
+        <i class="fas fa-handshake text-3xl text-accent-300"></i>
+        <h3 class="mt-6 font-display font-bold text-xl">Not sure where to start?</h3>
+        <p class="mt-3 text-white/75 leading-relaxed text-[0.95rem]">Tell us what you need to achieve. We'll recommend the right mix of hardware, connectivity, energy and automation.</p>
+        <a href="#booking" class="btn-primary mt-6 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold">Speak to an expert <i class="fas fa-arrow-right text-xs"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY / STATS ============ -->
+<section id="why" class="relative py-24 overflow-hidden">
+  <div class="parallax-band absolute inset-0" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1000&fit=crop&q=80')"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-ink-900/95 via-primary-900/90 to-ink-900/95"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal section-badge dark"><i class="fas fa-star text-xs"></i> Why Choose Us?</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-white">Innovate with confidence</h2>
+      <div class="reveal r2 accent-divider warm mx-auto mt-5"></div>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal glass rounded-3xl p-7 card-lift">
+        <i class="fas fa-medal text-2xl text-accent-300"></i>
+        <h3 class="mt-5 font-display font-semibold text-lg text-white">15+ Years Expertise</h3>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Over a decade of industry experience delivering top-quality ICT, energy and AI solutions.</p>
+      </div>
+      <div class="reveal r2 glass rounded-3xl p-7 card-lift">
+        <i class="fas fa-sliders text-2xl text-accent-300"></i>
+        <h3 class="mt-5 font-display font-semibold text-lg text-white">Tailored Solutions</h3>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Customised services for home users, SMEs and large corporates.</p>
+      </div>
+      <div class="reveal r3 glass rounded-3xl p-7 card-lift">
+        <i class="fas fa-route text-2xl text-accent-300"></i>
+        <h3 class="mt-5 font-display font-semibold text-lg text-white">End-to-End Support</h3>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Comprehensive assistance from consultation to installation and maintenance.</p>
+      </div>
+      <div class="reveal r4 glass rounded-3xl p-7 card-lift">
+        <i class="fas fa-wand-magic-sparkles text-2xl text-accent-300"></i>
+        <h3 class="mt-5 font-display font-semibold text-lg text-white">AI Innovation</h3>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Intelligent AI tools that enhance efficiency, compliance and customer relationships.</p>
+      </div>
+    </div>
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal"><div class="stat-num font-display font-extrabold text-5xl" data-count="250" data-suffix="+">250+</div><p class="mt-2 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">Projects completed</p></div>
+      <div class="reveal r2"><div class="stat-num font-display font-extrabold text-5xl" data-count="35" data-suffix="">35</div><p class="mt-2 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">Ongoing projects</p></div>
+      <div class="reveal r3"><div class="stat-num font-display font-extrabold text-5xl" data-count="50" data-suffix="+">50+</div><p class="mt-2 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">Team members</p></div>
+      <div class="reveal r4"><div class="stat-num font-display font-extrabold text-5xl" data-count="500" data-suffix="+">500+</div><p class="mt-2 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">Happy clients</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI SERVICES ============ -->
+<section id="ai" class="py-24 lg:py-32 bg-ink text-white relative overflow-hidden">
+  <div class="blob w-[28rem] h-[28rem] bg-primary-600 -top-40 -right-32" style="opacity:.35"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="reveal section-badge dark"><i class="fas fa-brain text-xs"></i> DEVIS AI</div>
+        <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl leading-tight">Intelligent AI services</h2>
+        <div class="reveal r2 accent-divider warm mt-5"></div>
+        <p class="reveal r3 mt-6 text-white/70 text-[1.05rem] leading-relaxed">Transform your business with cutting-edge AI solutions. We build custom tools to automate, optimise and secure your operations.</p>
+        <div class="mt-10 grid sm:grid-cols-2 gap-5">
+          <div class="reveal card-lift rounded-2xl p-6 bg-white/[0.04] border border-white/10 hover:border-accent/40">
+            <div class="icon-tile w-11 h-11 rounded-xl bg-primary-500/25 text-primary-200 flex items-center justify-center"><i class="fas fa-address-book"></i></div>
+            <h3 class="mt-4 font-display font-semibold">Customer Relationship Management</h3>
+            <p class="mt-2 text-sm text-white/65 leading-relaxed">AI-powered CRM to track leads, automate follow-ups and enhance customer engagement.</p>
+          </div>
+          <div class="reveal r2 card-lift rounded-2xl p-6 bg-white/[0.04] border border-white/10 hover:border-accent/40">
+            <div class="icon-tile w-11 h-11 rounded-xl bg-accent/20 text-accent-300 flex items-center justify-center"><i class="fas fa-shield-halved"></i></div>
+            <h3 class="mt-4 font-display font-semibold">Compliance Risk Management</h3>
+            <p class="mt-2 text-sm text-white/65 leading-relaxed">Automated risk assessment, compliance monitoring and reporting to keep your business secure.</p>
+          </div>
+          <div class="reveal r3 card-lift rounded-2xl p-6 bg-white/[0.04] border border-white/10 hover:border-accent/40">
+            <div class="icon-tile w-11 h-11 rounded-xl bg-flame/20 text-flame-light flex items-center justify-center"><i class="fas fa-code"></i></div>
+            <h3 class="mt-4 font-display font-semibold">Custom AI Development</h3>
+            <p class="mt-2 text-sm text-white/65 leading-relaxed">Tailor-made AI solutions including chatbots, predictive analytics and process automation.</p>
+          </div>
+          <div class="reveal r4 card-lift rounded-2xl p-6 bg-white/[0.04] border border-white/10 hover:border-accent/40">
+            <div class="icon-tile w-11 h-11 rounded-xl bg-sky-400/20 text-sky-300 flex items-center justify-center"><i class="fas fa-chart-line"></i></div>
+            <h3 class="mt-4 font-display font-semibold">Data Insights &amp; Analytics</h3>
+            <p class="mt-2 text-sm text-white/65 leading-relaxed">Harness AI to gain deep insights from your data and make informed decisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal r2">
+        <div class="rounded-[28px] overflow-hidden border border-white/10 bg-ink-700/80 backdrop-blur shadow-2xl shadow-black/40">
+          <div class="relative h-40">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1100&h=400&fit=crop&q=80" alt="Artificial intelligence" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-700 to-transparent"></div>
+          </div>
+          <form id="ai-form" class="p-7 pt-2 space-y-4" data-subject="AI services request" action="javascript:void(0)"><div style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url_hp" tabindex="-1" autocomplete="off"></div>
+            <h3 class="font-display font-bold text-xl">Request AI services</h3>
+            <p class="text-sm text-white/60 -mt-2">Tell us what you need. We'll arrange a consultation to assess your requirements.</p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label class="label-dark block select-none" for="ai-name">Full name *</label><input id="ai-name" name="Full name" required class="field-dark block w-full max-w-full" placeholder="Your name"></div>
+              <div><label class="label-dark block select-none" for="ai-email">Email address *</label><input id="ai-email" name="Email" type="email" required class="field-dark block w-full max-w-full" placeholder="you@company.com"></div>
+              <div><label class="label-dark block select-none" for="ai-phone">Phone number *</label><input id="ai-phone" name="Phone" type="tel" required class="field-dark block w-full max-w-full" placeholder="Your number"></div>
+              <div><label class="label-dark block select-none" for="ai-type">Service type *</label>
+                <select id="ai-type" name="Service type" required class="field-dark block w-full max-w-full">
+                  <option value="">Select...</option><option>CRM System</option><option>Compliance Risk Management</option><option>Custom AI Development</option><option>Chatbot / Virtual Assistant</option><option>Predictive Analytics</option><option>Process Automation</option><option>Other</option>
+                </select></div>
+              <div><label class="label-dark block select-none" for="ai-date">Preferred consultation date *</label><input id="ai-date" name="Preferred date" type="date" required class="field-dark block w-full max-w-full"></div>
+              <div><label class="label-dark block select-none" for="ai-time">Preferred time *</label>
+                <select id="ai-time" name="Preferred time" required class="field-dark block w-full max-w-full">
+                  <option value="">Select...</option><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option>
+                </select></div>
+            </div>
+            <div><label class="label-dark block select-none" for="ai-desc">Description of requirements *</label><textarea id="ai-desc" name="Requirements" rows="3" required class="field-dark block w-full max-w-full" placeholder="What would you like to automate or improve?"></textarea></div>
+            <div class="vpc-spam-check"><label for="vpc-spam" class="label-dark block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field-dark block w-full max-w-full"></div><button type="submit" class="btn-primary w-full rounded-full py-3.5 font-bold inline-flex items-center justify-center gap-2">Submit AI request <i class="fas fa-paper-plane text-sm"></i></button>
+            <p class="form-status text-sm text-accent-200" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLAR ============ -->
+<section id="solar" class="py-24 lg:py-32 bg-gradient-to-b from-accent-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28">
+      <div class="reveal section-badge" style="background:linear-gradient(135deg,#fef7e0,#fdecb3);color:#9c6d00"><i class="fas fa-sun text-xs"></i> DEVIS Solar</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink leading-tight">Solar energy solutions designed for your property</h2>
+      <div class="reveal r2 accent-divider warm mt-5"></div>
+      <p class="reveal r3 mt-6 text-gray-600 leading-relaxed">Get a custom solar system designed for your home, business or industrial site. Tell us about the property and the appliances you run, and we'll come back to you with a tailored solution.</p>
+      <div class="reveal r3 mt-8 rounded-3xl overflow-hidden shadow-xl shadow-amber-900/10">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1000&h=620&fit=crop&q=80" alt="Solar panel array in full sun" class="w-full h-64 object-cover" loading="lazy">
+      </div>
+      <div class="reveal r4 mt-6 grid grid-cols-3 gap-3 text-center">
+        <div class="rounded-2xl bg-white border border-accent-100 p-4"><i class="fas fa-house text-accent-600"></i><p class="mt-2 text-xs font-semibold text-ink">Residential</p></div>
+        <div class="rounded-2xl bg-white border border-accent-100 p-4"><i class="fas fa-building text-accent-600"></i><p class="mt-2 text-xs font-semibold text-ink">Commercial</p></div>
+        <div class="rounded-2xl bg-white border border-accent-100 p-4"><i class="fas fa-industry text-accent-600"></i><p class="mt-2 text-xs font-semibold text-ink">Industrial</p></div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 reveal r2">
+      <form id="solar-form" class="bg-white rounded-[28px] border border-mist-dark shadow-2xl shadow-primary-900/10 p-7 sm:p-10 space-y-5" data-subject="Solar quote request" action="javascript:void(0)"><div style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url_hp" tabindex="-1" autocomplete="off"></div>
+        <div>
+          <h3 class="font-display font-bold text-2xl text-ink">Request a solar quote</h3>
+          <p class="mt-1 text-sm text-gray-500">Fields marked * are required.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="label block select-none" for="s-name">Full name *</label><input id="s-name" name="Full name" required class="field block w-full max-w-full" placeholder="Your name"></div>
+          <div><label class="label block select-none" for="s-email">Email address *</label><input id="s-email" name="Email" type="email" required class="field block w-full max-w-full" placeholder="you@email.com"></div>
+          <div><label class="label block select-none" for="s-phone">Phone number *</label><input id="s-phone" name="Phone" type="tel" required class="field block w-full max-w-full" placeholder="Your number"></div>
+          <div><label class="label block select-none" for="s-type">Property type *</label>
+            <select id="s-type" name="Property type" required class="field block w-full max-w-full"><option value="">Select...</option><option>Residential</option><option>Commercial</option><option>Industrial</option></select></div>
+        </div>
+        <div><label class="label block select-none" for="s-addr">Physical address *</label><input id="s-addr" name="Physical address" required class="field block w-full max-w-full" placeholder="Street, suburb, city"></div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="label block select-none" for="s-beds">Number of bedrooms</label><input id="s-beds" name="Bedrooms" type="number" min="0" class="field block w-full max-w-full" placeholder="e.g. 4"></div>
+          <div><label class="label block select-none" for="s-geysers">Number of geysers</label><input id="s-geysers" name="Geysers" type="number" min="0" class="field block w-full max-w-full" placeholder="e.g. 2"></div>
+        </div>
+        <div>
+          <span class="label block select-none">Appliances &amp; equipment</span>
+          <div class="flex flex-wrap gap-2.5">
+            <label class="check-pill relative"><input type="checkbox" name="Appliances" value="Kettle"><span><i class="fas fa-mug-hot text-xs"></i>Kettle</span></label>
+            <label class="check-pill relative"><input type="checkbox" name="Appliances" value="Heat pump"><span><i class="fas fa-temperature-arrow-up text-xs"></i>Heat pump</span></label>
+            <label class="check-pill relative"><input type="checkbox" name="Appliances" value="Solar pump"><span><i class="fas fa-water text-xs"></i>Solar pump</span></label>
+            <label class="check-pill relative"><input type="checkbox" name="Appliances" value="Borehole"><span><i class="fas fa-arrow-down-up-across-line text-xs"></i>Borehole</span></label>
+          </div>
+        </div>
+        <div><label class="label block select-none" for="s-info">Additional information / requirements</label><textarea id="s-info" name="Additional information" rows="3" class="field block w-full max-w-full" placeholder="Backup during outages, going off-grid, existing inverter..."></textarea></div>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Submit inquiry <i class="fas fa-solar-panel text-sm"></i></button>
+        <p class="form-status text-sm text-primary-700" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal section-badge"><i class="fas fa-diagram-project text-xs"></i> How It Works</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink">From first conversation to long-term support</h2>
+      <div class="reveal r2 accent-divider mx-auto mt-5"></div>
+    </div>
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      <div class="hidden lg:block absolute top-9 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-primary-200"></div>
+      <div class="reveal text-center relative">
+        <div class="mx-auto w-[72px] h-[72px] rounded-2xl bg-white border-2 border-primary-100 shadow-lg flex items-center justify-center relative z-10"><i class="fas fa-comments text-2xl text-primary-600"></i></div>
+        <span class="mt-5 block text-xs font-bold tracking-[0.25em] text-accent-600">STEP 01</span>
+        <h3 class="mt-2 font-display font-bold text-lg text-ink">Consult</h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed px-4">We listen to your goals, budget and timelines.</p>
+      </div>
+      <div class="reveal r2 text-center relative">
+        <div class="mx-auto w-[72px] h-[72px] rounded-2xl bg-white border-2 border-primary-100 shadow-lg flex items-center justify-center relative z-10"><i class="fas fa-clipboard-check text-2xl text-primary-600"></i></div>
+        <span class="mt-5 block text-xs font-bold tracking-[0.25em] text-accent-600">STEP 02</span>
+        <h3 class="mt-2 font-display font-bold text-lg text-ink">Assess &amp; design</h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed px-4">A proper assessment, then a solution sized to your needs.</p>
+      </div>
+      <div class="reveal r3 text-center relative">
+        <div class="mx-auto w-[72px] h-[72px] rounded-2xl bg-white border-2 border-primary-100 shadow-lg flex items-center justify-center relative z-10"><i class="fas fa-screwdriver-wrench text-2xl text-primary-600"></i></div>
+        <span class="mt-5 block text-xs font-bold tracking-[0.25em] text-accent-600">STEP 03</span>
+        <h3 class="mt-2 font-display font-bold text-lg text-ink">Install</h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed px-4">Neat, professional installation and configuration.</p>
+      </div>
+      <div class="reveal r4 text-center relative">
+        <div class="mx-auto w-[72px] h-[72px] rounded-2xl bg-white border-2 border-primary-100 shadow-lg flex items-center justify-center relative z-10"><i class="fas fa-headset text-2xl text-primary-600"></i></div>
+        <span class="mt-5 block text-xs font-bold tracking-[0.25em] text-accent-600">STEP 04</span>
+        <h3 class="mt-2 font-display font-bold text-lg text-ink">Support</h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed px-4">Ongoing maintenance and after-sales service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="py-24 lg:py-32 bg-mist">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal section-badge"><i class="fas fa-quote-left text-xs"></i> What Our Clients Say</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink">Experiences from our solar clients</h2>
+      <div class="reveal r2 accent-divider mx-auto mt-5"></div>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-2 gap-6">
+      <figure class="reveal card-lift bg-white rounded-3xl p-8 border border-mist-dark relative">
+        <span class="quote-mark absolute top-5 right-7 text-7xl text-primary-100">&ldquo;</span>
+        <div class="flex gap-1 text-accent text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote class="mt-4 text-ink-600 leading-relaxed">I've done 2 installations with Rajen, and big systems to basically run off grid while still being connected to City Power. The assessment before installation was great to provide the best possible solution. The installation was done within 2 days, which included 4 batteries, 1 inverter and 16 panels. Workmanship is neat and tidy. And the best part is Rajen's after sales service if there is an issue. His prices are unparalleled and quality service is hard to come by. I would definitely recommend DEVIS Enterprise for any solar solution, large or small.</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white font-display font-bold flex items-center justify-center">YN</span><span><b class="block font-display text-ink">Yuben Naidoo</b><span class="text-sm text-gray-500">Fairlands, Randburg</span></span></figcaption>
+      </figure>
+      <div class="grid gap-6">
+        <figure class="reveal r2 card-lift bg-white rounded-3xl p-8 border border-mist-dark relative">
+          <span class="quote-mark absolute top-5 right-7 text-7xl text-primary-100">&ldquo;</span>
+          <div class="flex gap-1 text-accent text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote class="mt-4 text-ink-600 leading-relaxed">Rajen and his team did a fantastic job installing my 16kVA inverter system at my home. Swift, neat and professional installation at a great price. Would definitely recommend their services!</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-gradient-to-br from-accent to-flame text-white font-display font-bold flex items-center justify-center">AB</span><span><b class="block font-display text-ink">Andrew Bartlett</b><span class="text-sm text-gray-500">Weltevreden Park, Roodepoort</span></span></figcaption>
+        </figure>
+        <figure class="reveal r3 card-lift bg-white rounded-3xl p-8 border border-mist-dark relative">
+          <span class="quote-mark absolute top-5 right-7 text-7xl text-primary-100">&ldquo;</span>
+          <div class="flex gap-1 text-accent text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote class="mt-4 text-ink-600 leading-relaxed">DEVIS Solar installed a system for our home and we've seen a 60% reduction in our electricity bill. The team was professional and the installation was seamless.</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-gradient-to-br from-sky-500 to-indigo-600 text-white font-display font-bold flex items-center justify-center">JM</span><span><b class="block font-display text-ink">John M.</b><span class="text-sm text-gray-500">Johannesburg</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <figure class="reveal card-lift bg-white rounded-3xl p-8 border border-mist-dark">
+        <div class="flex gap-1 text-accent text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote class="mt-4 text-ink-600 leading-relaxed">The team at DEVIS Solar provided excellent service from consultation to installation. They really understood our commercial needs and designed a solution that works perfectly.</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-display font-bold flex items-center justify-center">SN</span><span><b class="block font-display text-ink">Sipho N.</b><span class="text-sm text-gray-500">Midrand</span></span></figcaption>
+      </figure>
+      <figure class="reveal r2 card-lift bg-white rounded-3xl p-8 border border-mist-dark">
+        <div class="flex gap-1 text-accent text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote class="mt-4 text-ink-600 leading-relaxed">Very happy with the solar installation. The system has been running smoothly and we're already seeing savings. I would definitely recommend DEVIS Solar.</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-gradient-to-br from-primary-400 to-flame text-white font-display font-bold flex items-center justify-center">TK</span><span><b class="block font-display text-ink">Thandi K.</b><span class="text-sm text-gray-500">Centurion</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <div class="reveal section-badge"><i class="fas fa-circle-question text-xs"></i> FAQ</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink leading-tight">Frequently asked questions</h2>
+      <div class="reveal r2 accent-divider mt-5"></div>
+      <p class="reveal r3 mt-6 text-gray-600 leading-relaxed">Answers to common questions about our services. Can't find yours?</p>
+      <a href="#contact" class="reveal r3 btn-violet mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold">Ask us directly <i class="fas fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="lg:col-span-8 space-y-4">
+      <div class="reveal faq-item rounded-2xl border border-mist-dark bg-white transition">
+        <button class="faq-q w-full flex items-center justify-between gap-6 text-left p-6" aria-expanded="false">
+          <span class="font-display font-semibold text-ink">What industries do you specialise in?</span>
+          <span class="chev w-9 h-9 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0"><i class="fas fa-chevron-down text-xs"></i></span>
+        </button>
+        <div class="faq-answer"><p class="px-6 pb-6 text-gray-600 leading-relaxed">We serve a diverse range of industries including finance, healthcare, education, retail and manufacturing. Our solutions are tailored to meet the specific regulatory and operational requirements of each sector.</p></div>
+      </div>
+      <div class="reveal r2 faq-item rounded-2xl border border-mist-dark bg-white transition">
+        <button class="faq-q w-full flex items-center justify-between gap-6 text-left p-6" aria-expanded="false">
+          <span class="font-display font-semibold text-ink">How quickly can you respond to support requests?</span>
+          <span class="chev w-9 h-9 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0"><i class="fas fa-chevron-down text-xs"></i></span>
+        </button>
+        <div class="faq-answer"><p class="px-6 pb-6 text-gray-600 leading-relaxed">Our standard response time is within 2 business hours for priority requests and 4 hours for standard requests. We offer 24/7 emergency support for our enterprise clients with SLA guarantees.</p></div>
+      </div>
+      <div class="reveal r3 faq-item rounded-2xl border border-mist-dark bg-white transition">
+        <button class="faq-q w-full flex items-center justify-between gap-6 text-left p-6" aria-expanded="false">
+          <span class="font-display font-semibold text-ink">Do you offer customised solutions for large enterprises?</span>
+          <span class="chev w-9 h-9 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0"><i class="fas fa-chevron-down text-xs"></i></span>
+        </button>
+        <div class="faq-answer"><p class="px-6 pb-6 text-gray-600 leading-relaxed">Yes. We specialise in developing bespoke ICT, solar and AI solutions for large enterprises. Our team works closely with your organisation to understand your unique requirements and design a system that aligns with your business objectives.</p></div>
+      </div>
+      <div class="reveal r4 faq-item rounded-2xl border border-mist-dark bg-white transition">
+        <button class="faq-q w-full flex items-center justify-between gap-6 text-left p-6" aria-expanded="false">
+          <span class="font-display font-semibold text-ink">Do you install solar for homes and businesses?</span>
+          <span class="chev w-9 h-9 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0"><i class="fas fa-chevron-down text-xs"></i></span>
+        </button>
+        <div class="faq-answer"><p class="px-6 pb-6 text-gray-600 leading-relaxed">Yes. DEVIS Solar designs and installs systems for residential, commercial and industrial properties. Send us your property details through the solar quote form and we'll come back to you with a tailored solution.</p></div>
+      </div>
+      <div class="reveal r4 faq-item rounded-2xl border border-mist-dark bg-white transition">
+        <button class="faq-q w-full flex items-center justify-between gap-6 text-left p-6" aria-expanded="false">
+          <span class="font-display font-semibold text-ink">What payment methods do you accept?</span>
+          <span class="chev w-9 h-9 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0"><i class="fas fa-chevron-down text-xs"></i></span>
+        </button>
+        <div class="faq-answer"><p class="px-6 pb-6 text-gray-600 leading-relaxed">We accept all major credit cards and EFT payments, and offer flexible payment plans for large projects. Corporate accounts can be set up with monthly billing cycles.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING CTA ============ -->
+<section id="booking" class="relative py-20 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-800 to-ink"></div>
+  <div class="hero-grid absolute inset-0"></div>
+  <div class="relative max-w-5xl mx-auto px-5 lg:px-8 text-center">
+    <h2 class="reveal font-display font-extrabold text-3xl sm:text-5xl text-white leading-tight">You've got a problem?<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-flame-light">We have the solution.</span></h2>
+    <p class="reveal r2 mt-6 text-white/75 text-lg max-w-2xl mx-auto">ICT, solar or AI: contact us today to find out how we can help your business thrive.</p>
+    <div class="reveal r3 mt-10 flex flex-wrap justify-center gap-4">
+      <a href="tel:+27845122999" class="btn-primary rounded-full px-7 py-4 font-bold inline-flex items-center gap-2"><i class="fas fa-phone-alt"></i> +27 84 512 2999</a>
+      <a href="https://wa.me/27845122999?text=Hi%20DEVIS%20Enterprise%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" class="btn-outline rounded-full px-7 py-4 font-semibold inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
+      <a href="mailto:info@devisent.co.za" class="btn-outline rounded-full px-7 py-4 font-semibold inline-flex items-center gap-2"><i class="fas fa-envelope"></i> info@devisent.co.za</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal section-badge"><i class="fas fa-paper-plane text-xs"></i> Get In Touch</div>
+      <h2 class="reveal r2 mt-5 font-display font-bold text-3xl sm:text-4xl text-ink">Contact Us</h2>
+      <div class="reveal r2 accent-divider mx-auto mt-5"></div>
+      <p class="reveal r3 mt-5 text-gray-600">Contact us today to discuss your technology, solar or AI needs.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-5 gap-8">
+      <aside class="reveal lg:col-span-2 rounded-[28px] bg-ink text-white p-8 sm:p-10 relative overflow-hidden">
+        <div class="blob w-64 h-64 bg-primary-600 -bottom-20 -right-20" style="opacity:.4"></div>
+        <h3 class="relative font-display font-bold text-xl">Contact information</h3>
+        <ul class="relative mt-8 space-y-6">
+          <li class="flex gap-4"><span class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-location-dot text-accent"></i></span><span><span class="block text-xs uppercase tracking-[0.2em] text-white/50 font-semibold">Address</span><span class="block mt-1 text-white/90">75 Juweel Street, Jukskei Park,<br>Randburg, Gauteng 2188</span></span></li>
+          <li class="flex gap-4"><span class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-phone-alt text-accent"></i></span><span><span class="block text-xs uppercase tracking-[0.2em] text-white/50 font-semibold">Phone</span><a href="tel:+27845122999" class="block mt-1 text-white/90 hover:text-accent transition">+27 84 512 2999</a></span></li>
+          <li class="flex gap-4"><span class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-envelope text-accent"></i></span><span><span class="block text-xs uppercase tracking-[0.2em] text-white/50 font-semibold">Email</span><a href="mailto:info@devisent.co.za" class="block mt-1 text-white/90 hover:text-accent transition">info@devisent.co.za</a></span></li>
+          <li class="flex gap-4"><span class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-clock text-accent"></i></span><span><span class="block text-xs uppercase tracking-[0.2em] text-white/50 font-semibold">Business hours</span><span class="block mt-1 text-white/90">Monday – Friday: 8:00 AM – 5:00 PM</span></span></li>
+        </ul>
+        <a href="https://wa.me/27845122999?text=Hi%20DEVIS%20Enterprise%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" class="relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-5 py-3 text-sm font-bold hover:brightness-110 transition"><i class="fab fa-whatsapp text-lg"></i> Chat on WhatsApp</a>
+      </aside>
+
+      <form id="contact-form" class="reveal r2 lg:col-span-3 rounded-[28px] border border-mist-dark p-8 sm:p-10 space-y-5 bg-white shadow-xl shadow-primary-900/5" data-subject="Website enquiry" action="javascript:void(0)"><div style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="website_url_hp" tabindex="-1" autocomplete="off"></div>
+        <h3 class="font-display font-bold text-xl text-ink">Send us a message</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="label block select-none" for="c-name">Name *</label><input id="c-name" name="Name" required class="field block w-full max-w-full" placeholder="Your name"></div>
+          <div><label class="label block select-none" for="c-phone">Phone *</label><input id="c-phone" name="Phone" type="tel" required class="field block w-full max-w-full" placeholder="Your number"></div>
+        </div>
+        <div><label class="label block select-none" for="c-email">Email *</label><input id="c-email" name="Email" type="email" required class="field block w-full max-w-full" placeholder="you@email.com"></div>
+        <div><label class="label block select-none" for="c-topic">I'm interested in</label>
+          <select id="c-topic" name="Interested in" class="field block w-full max-w-full"><option>ICT Hardware &amp; Software</option><option>VOIP &amp; Connectivity</option><option>AI &amp; Automation</option><option>Solar Energy Systems</option><option>Installation &amp; Support</option><option>Something else</option></select></div>
+        <div><label class="label block select-none" for="c-msg">Message *</label><textarea id="c-msg" name="Message" rows="4" required class="field block w-full max-w-full" placeholder="How can we help?"></textarea></div>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Send Message <i class="fas fa-paper-plane text-sm"></i></button>
+        <p class="form-status text-sm text-primary-700" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+<section class="fade-up" style="background:#e5e7eb;"><iframe src="https://www.google.com/maps?q=75%20Juweel%20Street%2C%20Jukskei%20Park%2C%20Randburg%2C%20Gauteng%202188&output=embed" width="100%" height="400" style="border:0;display:block;" allowfullscreen loading="lazy" title="75 Juweel Street, Jukskei Park, Randburg, Gauteng 2188"></iframe></section>
+<footer class="bg-ink-900 text-white/70 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-1">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-800 flex items-center justify-center"><span class="font-display font-extrabold text-accent text-lg">D</span></span>
+        <span class="font-display font-extrabold text-white text-lg">DEVIS<span class="text-accent">.</span> <span class="font-semibold text-white/60 text-sm">Enterprise</span></span>
+      </a>
+      <p class="mt-5 text-sm leading-relaxed">Empowering businesses and individuals through innovative ICT services, cutting-edge hardware, sustainable solar energy and intelligent AI solutions.</p>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white">Quick links</h4>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li><a href="#home" class="hover:text-accent transition">Home</a></li>
+        <li><a href="#about" class="hover:text-accent transition">About us</a></li>
+        <li><a href="#services" class="hover:text-accent transition">Solutions</a></li>
+        <li><a href="#ai" class="hover:text-accent transition">AI services</a></li>
+        <li><a href="#solar" class="hover:text-accent transition">Solar solutions</a></li>
+        <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white">Our services</h4>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li><a href="#services" class="hover:text-accent transition">ICT Hardware &amp; Software</a></li>
+        <li><a href="https://www.devis-isp.co.za/" target="_blank" rel="noopener" class="hover:text-accent transition">VOIP &amp; Connectivity</a></li>
+        <li><a href="#ai" class="hover:text-accent transition">AI &amp; Automation</a></li>
+        <li><a href="#solar" class="hover:text-accent transition">Solar Energy Systems</a></li>
+        <li><a href="#services" class="hover:text-accent transition">Installation &amp; Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white">Contact</h4>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li class="flex gap-3"><i class="fas fa-location-dot text-accent mt-1"></i><span>75 Juweel Street, Jukskei Park, Randburg, Gauteng 2188</span></li>
+        <li class="flex gap-3"><i class="fas fa-phone-alt text-accent mt-1"></i><a href="tel:+27845122999" class="hover:text-accent transition">+27 84 512 2999</a></li>
+        <li class="flex gap-3"><i class="fas fa-envelope text-accent mt-1"></i><a href="mailto:info@devisent.co.za" class="hover:text-accent transition">info@devisent.co.za</a></li>
+        <li class="flex gap-3"><i class="fas fa-clock text-accent mt-1"></i><span>Mon – Fri: 8:00 AM – 5:00 PM</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+    <p>&copy; 2026 DEVIS Enterprise (Pty) Ltd. All rights reserved.</p>
+    <p>Website by <a href="https://vantagepc.co.za" target="_blank" rel="noopener" class="text-white/70 hover:text-accent transition">Vantage Point Consulting</a></p>
+  </div>
+</footer>
+
+<a id="wa-float" href="https://wa.me/27845122999?text=Hi%20DEVIS%20Enterprise%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i><span class="wa-tip">Chat on WhatsApp</span></a>
+<button id="to-top" class="fixed left-[28px] bottom-[92px] z-40 w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg shadow-primary-900/30 hover:bg-primary-700" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+(function(){
+  var nav=document.getElementById('main-nav');
+  var toTop=document.getElementById('to-top');
+  function onScroll(){
+    var y=window.scrollY;
+    nav.classList.toggle('scrolled', y>80);
+    toTop.classList.toggle('show', y>600);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id=a.getAttribute('href'); if(id.length<2) return;
+      var el=document.querySelector(id); if(!el) return;
+      e.preventDefault();
+      window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
+    });
+  });
+
+  var burger=document.getElementById('burger'), menu=document.getElementById('mobile-menu');
+  function setMenu(open){ menu.classList.toggle('open', open); burger.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); if(open) nav.classList.add('scrolled'); else onScroll(); }
+  burger.addEventListener('click', function(){ setMenu(!menu.classList.contains('open')); });
+  menu.querySelectorAll('.mobile-link').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Count-up for the stats band (values are the client's own published figures).
+  var cio=new IntersectionObserver(function(entries){ entries.forEach(function(e){
+    if(!e.isIntersecting) return; cio.unobserve(e.target);
+    var el=e.target, end=+el.dataset.count, suf=el.dataset.suffix||'', t0=null;
+    function step(t){ if(!t0) t0=t; var p=Math.min((t-t0)/1400,1); el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf; if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }); },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item=q.parentElement, open=!item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+      item.classList.toggle('open', open); q.setAttribute('aria-expanded', open);
+    });
+  });
+
+  // Forms open the visitor's mail client addressed to info@devisent.co.za.
+  // The anti-spam listener (injected later) runs after this one and cancels the
+  // submit when it fails, so the hand-off waits a tick and checks defaultPrevented.
+  ['contact-form','ai-form','solar-form'].forEach(function(id){
+    var form=document.getElementById(id); if(!form) return;
+    var status=form.querySelector('.form-status');
+    form.addEventListener('submit', function(ev){
+      setTimeout(function(){
+        if(ev.defaultPrevented) return;
+        var lines=[], seen={};
+        Array.prototype.forEach.call(form.elements, function(el){
+          if(!el.name || el.name==='website_url_hp' || el.name==='antispam_answer' || el.type==='submit') return;
+          if(el.type==='checkbox'){ if(!el.checked) return; seen[el.name]=(seen[el.name]?seen[el.name]+', ':'')+el.value; return; }
+          if(el.value.trim()) lines.push(el.name+': '+el.value.trim());
+        });
+        Object.keys(seen).forEach(function(k){ lines.push(k+': '+seen[k]); });
+        var who=(form.elements['Full name']||form.elements['Name']||{}).value||'';
+        var subject=form.dataset.subject+(who?' from '+who:'');
+        window.location.href='mailto:info@devisent.co.za?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+        status.textContent='Thank you. Your email app has opened with your request addressed to info@devisent.co.za. Just press send.';
+        status.classList.add('show');
+      }, 0);
+    });
+  });
+})();
+</script>
+<style>#main-nav:not(.scrolled){background:rgba(18,11,38,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}</style>
+
+<script>
+(function(){
+  var _lt=Date.now();
+  var _ans=12;
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      var hp=f.querySelector('[name="website_url_hp"]');
+      if(hp&&hp.value){e.preventDefault();return false;}
+      if(Date.now()-_lt<3000){e.preventDefault();alert('Please wait a moment before submitting.');return false;}
+      var ma=f.querySelector('[name="antispam_answer"]');
+      if(ma&&parseInt(ma.value)!==_ans){e.preventDefault();alert('Incorrect answer. Please try again.');ma.focus();return false;}
+    });
+  });
+})();
+</script>
+
+<!-- Chatbot Widget -->
+<style>
+  #chatbot-btn { position:fixed; bottom:24px; right:24px; width:62px; height:62px; border-radius:50%; overflow:hidden; padding:0; display:flex; align-items:center; justify-content:center; background:#6c2bd9; color:#fff; border:2px solid #f2a900; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,0.30); font-size:26px; z-index:1000; transition:all 0.3s; }
+  #chatbot-btn-logo { width:78%; height:78%; object-fit:contain; display:block; }
+  #chatbot-label { position:fixed; bottom:98px; right:24px; background:#f2a900; color:#111111; font-weight:700; font-size:13px; padding:8px 16px; border-radius:20px; cursor:pointer; z-index:1000; box-shadow:0 4px 14px rgba(0,0,0,0.28); white-space:nowrap; font-family:inherit; }
+  #chatbot-btn:hover { transform:scale(1.1); box-shadow:0 6px 25px rgba(0,0,0,0.3); }
+  #chatbot-window { position:fixed; bottom:100px; right:12px; width:min(360px,calc(100vw - 24px)); max-height:min(480px,calc(100vh - 140px)); background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); z-index:1000; display:none; flex-direction:column; overflow:hidden; border:1px solid #e2e8f0; }
+  #chatbot-window.open { display:flex; }
+  #chat-header { background:#6c2bd9; color:#fff; padding:16px 16px 12px; }
+  #chat-header h3 { margin:0; font-size:15px; font-weight:700; color:#fff; font-family:inherit; }
+  #chat-header p { margin:3px 0 0; font-size:11px; color:rgba(255,255,255,0.85); }
+  #chat-header .status { display:inline-block; width:8px; height:8px; background:#4ade80; border-radius:50%; margin-right:6px; }
+  #chat-messages { flex:1; overflow-y:auto; padding:14px; min-height:160px; max-height:260px; }
+  .chat-msg { max-width:82%; padding:10px 14px; border-radius:14px; margin-bottom:8px; font-size:13px; line-height:1.5; }
+  .chat-bot { background:#f1f5f9; color:#334155; border-bottom-left-radius:4px; }
+  .chat-user { background:#f2a900; color:#fff; margin-left:auto; border-bottom-right-radius:4px; }
+  .chat-typing { background:#f1f5f9; color:#94a3b8; border-bottom-left-radius:4px; font-style:italic; }
+  #chat-quick { border-top:1px solid #f1f5f9; padding:8px 14px; display:flex; flex-wrap:wrap; gap:4px; }
+  .chat-chip { padding:5px 10px; border:1px solid #e2e8f0; background:#fff; color:#475569; border-radius:20px; cursor:pointer; font-size:11px; transition:all 0.2s; white-space:nowrap; }
+  .chat-chip:hover { background:#f2a900; color:#fff; border-color:#f2a900; }
+  #chat-input-row { display:flex; border-top:1px solid #e2e8f0; }
+  #chat-input { flex:1; border:none; padding:12px 14px; font-size:13px; outline:none; color:#0f172a; background:#fff; caret-color:#0f172a; }
+  #chat-input::placeholder { color:#94a3b8; }
+  #chat-send { background:#f2a900; color:#fff; border:none; padding:12px 16px; cursor:pointer; font-size:14px; }
+  #chat-send:hover { opacity:0.9; }
+
+  /* --- floating widget stack (standard across all builds) --- */
+  #scrollTop, #scroll-top, .scroll-top, #backToTop, #back-to-top, .back-to-top { bottom:148px !important; right:24px !important; z-index:999 !important; }
+  @media (max-width:640px) {
+    #scrollTop, #scroll-top, .scroll-top, #backToTop, #back-to-top, .back-to-top { bottom:144px !important; right:18px !important; }
+  }
+  /* stand down while the chat panel or a full-screen drawer is open */
+  body.chat-open #scrollTop, body.chat-open #scroll-top, body.chat-open .scroll-top, body.chat-open #backToTop, body.chat-open #back-to-top, body.chat-open .back-to-top
+  { opacity:0 !important; visibility:hidden !important; pointer-events:none !important; }
+  body.overlay-open #scrollTop, body.overlay-open #scroll-top, body.overlay-open .scroll-top, body.overlay-open #backToTop, body.overlay-open #back-to-top, body.overlay-open .back-to-top,
+  body.overlay-open #chatbot-btn, body.overlay-open #chatbot-label, body.overlay-open #chatbot-window
+  { opacity:0 !important; visibility:hidden !important; pointer-events:none !important; }
+</style>
+
+<div id="chatbot-label" onclick="toggleChat()">Chat to us 👋</div><button id="chatbot-btn" onclick="toggleChat()" aria-label="Chat with DEVIS Enterprise"><span id="chatbot-btn-logo" style="font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;">💬</span><span id="chatbot-btn-close" style="display:none;font-size:24px;line-height:1;color:#f2a900;">✕</span></button>
+<div id="chatbot-window">
+  <div id="chat-header">
+    <h3><span class="status"></span>DEVIS Enterprise</h3>
+    <p>Usually replies instantly</p>
+  </div>
+  <div id="chat-messages">
+    <div class="chat-msg chat-bot">Hi! 👋 Welcome to DEVIS Enterprise — ask me anything about our services, pricing, or hours — or type your own question below.</div>
+  </div>
+  <div id="chat-quick">
+    <button class="chat-chip" onclick="askChip('What services do you offer?')">Services</button>
+    <button class="chat-chip" onclick="askChip('What are your hours?')">Hours</button>
+    <button class="chat-chip" onclick="askChip('Where are you based?')">Location</button>
+    <button class="chat-chip" onclick="askChip('How do I contact you?')">Contact</button>
+  </div>
+  <div id="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendMsg()">
+    <button id="chat-send" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<script>
+var chatKB = [{"keywords": ["who", "about", "company", "tell me about"], "answer": "We're DEVIS Enterprise! DEVIS Enterprise (Pty) Ltd is a technology solutions provider empowering businesses and individuals through innovative ICT services, sustainable solar energy and intelligent AI tools. It brings hardware, connectivity, solar and automation together under one roof."}, {"keywords": ["hello", "hi", "hey", "good morning", "good afternoon"], "answer": "Hello! Welcome to DEVIS Enterprise. How can I help you today?"}, {"keywords": ["thank", "thanks", "cheers", "appreciate"], "answer": "You're welcome! Is there anything else I can help you with?"}, {"keywords": ["bye", "goodbye", "later", "that's all"], "answer": "Thanks for chatting! Don't hesitate to reach out if you need anything. Have a great day!"}, {"keywords": ["service", "offer", "do you", "what do", "provide", "help with"], "answer": "We offer: ICT Hardware & Software, VOIP & Connectivity, AI & Automation, Solar Energy Systems, Installation & Support. Would you like details on any specific service?"}, {"keywords": ["hardware", "software"], "answer": "ICT Hardware & Software: Computer hardware, software and networking solutions for businesses and individuals."}, {"keywords": ["voip", "connectivity"], "answer": "VOIP & Connectivity: Business-grade VOIP, internet connectivity, domain registration and hosting through Devis-ISP."}, {"keywords": ["automation"], "answer": "AI & Automation: Custom AI tools: CRM, compliance risk management, chatbots, predictive analytics and process automation."}, {"keywords": ["solar", "energy", "systems"], "answer": "Solar Energy Systems: Solar energy solutions for residential, commercial and industrial properties."}, {"keywords": ["installation", "support"], "answer": "Installation & Support: Professional installation and ongoing maintenance for ICT, solar and AI systems."}, {"keywords": ["contact", "phone", "call", "email", "reach", "number", "address", "location", "where"], "answer": "Here's how to reach us:<br>\ud83d\udcde <a href=\"tel:+27845122999\" style=\"color:#f2a900;text-decoration:underline\">+27 84 512 2999</a><br>\u2709\ufe0f <a href=\"mailto:info@devisent.co.za\" style=\"color:#f2a900;text-decoration:underline\">info@devisent.co.za</a><br>\ud83d\udccd 75 Juweel Street, Jukskei Park, Randburg, Gauteng 2188"}, {"keywords": ["hour", "open", "close", "time", "when", "schedule", "available"], "answer": "Our business hours:<br><b>Monday - Friday</b>: 8:00 AM - 5:00 PM"}, {"keywords": ["price", "cost", "quote", "how much", "fee", "rate", "charge", "afford"], "answer": "We'd be happy to provide a free quote! Call us at <a href=\"tel:+27845122999\" style=\"color:#f2a900;text-decoration:underline\">+27 84 512 2999</a> or email <a href=\"mailto:info@devisent.co.za\" style=\"color:#f2a900;text-decoration:underline\">info@devisent.co.za</a>, or fill out the contact form on this page."}, {"keywords": ["emergency", "urgent", "asap", "now", "immediately", "today"], "answer": "For urgent matters, call us now at <a href=\"tel:+27845122999\" style=\"color:#f2a900;text-decoration:underline;font-weight:bold\">+27 84 512 2999</a>."}];
+
+function toggleChat(){
+  var w=document.getElementById('chatbot-window');
+  w.classList.toggle('open');
+  var _o=w.classList.contains('open');var _lg=document.getElementById('chatbot-btn-logo');if(_lg)_lg.style.display=_o?'none':'block';document.getElementById('chatbot-btn-close').style.display=_o?'block':'none';document.getElementById('chatbot-label').style.display=_o?'none':'block';document.body.classList.toggle('chat-open',_o);
+  if(w.classList.contains('open'))document.getElementById('chat-input').focus();
+}
+
+function addMsg(from,text){
+  var m=document.getElementById('chat-messages');
+  var d=document.createElement('div');
+  d.className='chat-msg '+(from==='user'?'chat-user':'chat-bot');
+  if(from==='user'){ d.textContent=text; }
+  else { d.innerHTML=text; }
+  m.appendChild(d);
+  m.scrollTop=m.scrollHeight;
+}
+
+function showTyping(){
+  var m=document.getElementById('chat-messages');
+  var d=document.createElement('div');
+  d.className='chat-msg chat-typing';
+  d.id='typing';
+  d.textContent='Typing...';
+  m.appendChild(d);
+  m.scrollTop=m.scrollHeight;
+}
+
+function hideTyping(){
+  var t=document.getElementById('typing');
+  if(t)t.remove();
+}
+
+function findAnswer(q){
+  var ql=q.toLowerCase().split(/\s+/);
+  var best=null, bestScore=0;
+  for(var i=0;i<chatKB.length;i++){
+    var score=0;
+    var keys=chatKB[i].keywords;
+    for(var j=0;j<keys.length;j++){
+      for(var w=0;w<ql.length;w++){
+        if(ql[w]===keys[j] || ql[w].indexOf(keys[j])!==-1) score+=2;
+      }
+    }
+    if(score>bestScore){ bestScore=score; best=chatKB[i]; }
+  }
+  if(best && bestScore>0) return best.answer;
+  return "That\'s a great question! I might not have the full details on that, but our team can definitely help. Give us a call at +27 84 512 2999 or email info@devisent.co.za and we\'ll get right back to you.";
+}
+
+function sendMsg(){
+  var inp=document.getElementById('chat-input');
+  var q=inp.value.trim();
+  if(!q)return;
+  addMsg('user',q);
+  inp.value='';
+  showTyping();
+  setTimeout(function(){
+    hideTyping();
+    addMsg('bot',findAnswer(q));
+  },800);
+}
+
+function askChip(q){
+  document.getElementById('chat-input').value=q;
+  sendMsg();
+}
+</script>
+
+<script>
+(function(){
+  var b=document.body;
+  var sync=function(){ b.classList.toggle('overlay-open', b.style.overflow==='hidden'); };
+  if (window.MutationObserver) {
+    new MutationObserver(sync).observe(b, {attributes:true, attributeFilter:['style']});
+  }
+  sync();
+})();
+</script>
+
+</body>
+</html>
