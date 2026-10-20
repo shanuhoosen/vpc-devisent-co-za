@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="DEVIS Enterprise | ICT, Solar &amp; AI Solutions">
 <meta property="og:description" content="One partner for your technology, your energy and your automation: ICT, VOIP and connectivity, solar and AI.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+<meta property="og:image" content="./assets/mark-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -114,7 +114,8 @@ tailwind.config = {
   .field { width:100%; border:1.5px solid #e4e0ef; border-radius:12px; padding:.8rem 1rem; font:inherit; font-size:.95rem; background:#fff; color:#1f1a33; transition:border-color .2s ease, box-shadow .2s ease; }
   .field:focus { outline:none; border-color:#6c2bd9; box-shadow:0 0 0 4px rgba(108,43,217,.12); }
   .field-dark { width:100%; border:1.5px solid rgba(255,255,255,.14); border-radius:12px; padding:.8rem 1rem; font:inherit; font-size:.95rem; background:rgba(255,255,255,.05); color:#fff; transition:border-color .2s ease, box-shadow .2s ease; }
-  .field-dark { color-scheme:dark; }
+  .field-dark::-webkit-calendar-picker-indicator { filter:invert(1) brightness(1.4); opacity:.8; cursor:pointer; }
+  .field-dark::-webkit-calendar-picker-indicator:hover { opacity:1; }
   .field-dark::placeholder { color:rgba(255,255,255,.4); }
   .field-dark:focus { outline:none; border-color:#f2a900; box-shadow:0 0 0 4px rgba(242,169,0,.15); }
   .field-dark option { color:#1f1a33; }
@@ -142,9 +143,9 @@ tailwind.config = {
   .form-status { display:none; }
   .form-status.show { display:block; }
 </style>
-  <link rel="icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
-  <link rel="shortcut icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
-  <link rel="apple-touch-icon" href="https://www.google.com/s2/favicons?domain=devisent.co.za&sz=64">
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="shortcut icon" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/mark-256.png">
   </head>
 <body>
 
@@ -152,9 +153,7 @@ tailwind.config = {
 <nav id="main-nav" class="fixed top-0 inset-x-0 z-50 py-4">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between">
     <a href="#home" class="flex items-center gap-3" aria-label="DEVIS Enterprise home">
-      <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-800 flex items-center justify-center shadow-lg shadow-primary-900/30 ring-1 ring-white/20">
-        <span class="font-display font-extrabold text-accent text-lg leading-none">D</span>
-      </span>
+      <img src="./assets/mark-256.png" alt="" width="40" height="40" class="w-10 h-10 rounded-xl shadow-lg shadow-primary-900/30">
       <span class="leading-tight">
         <span class="brand-name block font-display font-extrabold tracking-tight text-lg">DEVIS<span class="text-accent">.</span></span>
         <span class="block text-[10px] font-semibold tracking-[0.28em] uppercase text-primary-300">Enterprise</span>
@@ -483,7 +482,7 @@ tailwind.config = {
                 </select></div>
             </div>
             <div><label class="label-dark block select-none" for="ai-desc">Description of requirements *</label><textarea id="ai-desc" name="Requirements" rows="3" required class="field-dark block w-full max-w-full" placeholder="What would you like to automate or improve?"></textarea></div>
-            <div class="vpc-spam-check"><label for="vpc-spam" class="label-dark block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field-dark block w-full max-w-full"></div><button type="submit" class="btn-primary w-full rounded-full py-3.5 font-bold inline-flex items-center justify-center gap-2">Submit AI request <i class="fas fa-paper-plane text-sm"></i></button>
+            <div class="vpc-spam-check"><label for="vpc-spam" class="label-dark block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field-dark block w-full max-w-full"></div><button type="submit" class="btn-primary w-full rounded-full py-3.5 font-bold inline-flex items-center justify-center gap-2">Submit AI request <i class="fas fa-paper-plane text-sm"></i></button>
             <p class="form-status text-sm text-accent-200" role="status"></p>
           </form>
         </div>
@@ -538,7 +537,7 @@ tailwind.config = {
           </div>
         </div>
         <div><label class="label block select-none" for="s-info">Additional information / requirements</label><textarea id="s-info" name="Additional information" rows="3" class="field block w-full max-w-full" placeholder="Backup during outages, going off-grid, existing inverter..."></textarea></div>
-        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Submit inquiry <i class="fas fa-solar-panel text-sm"></i></button>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Submit inquiry <i class="fas fa-solar-panel text-sm"></i></button>
         <p class="form-status text-sm text-primary-700" role="status"></p>
       </form>
     </div>
@@ -727,7 +726,7 @@ tailwind.config = {
         <div><label class="label block select-none" for="c-topic">I'm interested in</label>
           <select id="c-topic" name="Interested in" class="field block w-full max-w-full"><option>ICT Hardware &amp; Software</option><option>VOIP &amp; Connectivity</option><option>AI &amp; Automation</option><option>Solar Energy Systems</option><option>Installation &amp; Support</option><option>Something else</option></select></div>
         <div><label class="label block select-none" for="c-msg">Message *</label><textarea id="c-msg" name="Message" rows="4" required class="field block w-full max-w-full" placeholder="How can we help?"></textarea></div>
-        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 3 + 9? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Send Message <i class="fas fa-paper-plane text-sm"></i></button>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Send Message <i class="fas fa-paper-plane text-sm"></i></button>
         <p class="form-status text-sm text-primary-700" role="status"></p>
       </form>
     </div>
@@ -741,7 +740,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="lg:col-span-1">
       <a href="#home" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-800 flex items-center justify-center"><span class="font-display font-extrabold text-accent text-lg">D</span></span>
+        <img src="./assets/mark-256.png" alt="" width="40" height="40" class="w-10 h-10 rounded-xl">
         <span class="font-display font-extrabold text-white text-lg">DEVIS<span class="text-accent">.</span> <span class="font-semibold text-white/60 text-sm">Enterprise</span></span>
       </a>
       <p class="mt-5 text-sm leading-relaxed">Empowering businesses and individuals through innovative ICT services, cutting-edge hardware, sustainable solar energy and intelligent AI solutions.</p>
@@ -863,7 +862,7 @@ tailwind.config = {
 <script>
 (function(){
   var _lt=Date.now();
-  var _ans=12;
+  var _ans=4;
   document.querySelectorAll('form').forEach(function(f){
     f.addEventListener('submit',function(e){
       var hp=f.querySelector('[name="website_url_hp"]');
@@ -915,7 +914,7 @@ tailwind.config = {
   { opacity:0 !important; visibility:hidden !important; pointer-events:none !important; }
 </style>
 
-<div id="chatbot-label" onclick="toggleChat()">Chat to us 👋</div><button id="chatbot-btn" onclick="toggleChat()" aria-label="Chat with DEVIS Enterprise"><span id="chatbot-btn-logo" style="font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;">💬</span><span id="chatbot-btn-close" style="display:none;font-size:24px;line-height:1;color:#f2a900;">✕</span></button>
+<div id="chatbot-label" onclick="toggleChat()">Chat to us 👋</div><button id="chatbot-btn" onclick="toggleChat()" aria-label="Chat with DEVIS Enterprise"><img id="chatbot-btn-logo" src="./assets/mark-256.png" alt="DEVIS Enterprise" style="width:100%;height:100%;object-fit:cover"><span id="chatbot-btn-close" style="display:none;font-size:24px;line-height:1;color:#f2a900;">✕</span></button>
 <div id="chatbot-window">
   <div id="chat-header">
     <h3><span class="status"></span>DEVIS Enterprise</h3>
