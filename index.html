@@ -102,7 +102,7 @@ tailwind.config = {
   .card-lift:hover .icon-tile { transform: scale(1.08) rotate(-3deg); }
 
   .division-card { position:relative; overflow:hidden; }
-  .division-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(108,43,217,.08), rgba(242,169,0,.08)); opacity:0; transition:opacity .35s ease; }
+  .division-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(108,43,217,.08), rgba(242,169,0,.08)); opacity:0; transition:opacity .35s ease; pointer-events:none; }
   .division-card:hover::before { opacity:1; }
 
   .faq-item .faq-answer { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.22,1,.36,1); }
@@ -482,7 +482,7 @@ tailwind.config = {
                 </select></div>
             </div>
             <div><label class="label-dark block select-none" for="ai-desc">Description of requirements *</label><textarea id="ai-desc" name="Requirements" rows="3" required class="field-dark block w-full max-w-full" placeholder="What would you like to automate or improve?"></textarea></div>
-            <div class="vpc-spam-check"><label for="vpc-spam" class="label-dark block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field-dark block w-full max-w-full"></div><button type="submit" class="btn-primary w-full rounded-full py-3.5 font-bold inline-flex items-center justify-center gap-2">Submit AI request <i class="fas fa-paper-plane text-sm"></i></button>
+            <div class="vpc-spam-check"><label for="vpc-spam" class="label-dark block select-none">Spam check: what is 8 + 4? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field-dark block w-full max-w-full"></div><button type="submit" class="btn-primary w-full rounded-full py-3.5 font-bold inline-flex items-center justify-center gap-2">Submit AI request <i class="fas fa-paper-plane text-sm"></i></button>
             <p class="form-status text-sm text-accent-200" role="status"></p>
           </form>
         </div>
@@ -537,7 +537,7 @@ tailwind.config = {
           </div>
         </div>
         <div><label class="label block select-none" for="s-info">Additional information / requirements</label><textarea id="s-info" name="Additional information" rows="3" class="field block w-full max-w-full" placeholder="Backup during outages, going off-grid, existing inverter..."></textarea></div>
-        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Submit inquiry <i class="fas fa-solar-panel text-sm"></i></button>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 8 + 4? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Submit inquiry <i class="fas fa-solar-panel text-sm"></i></button>
         <p class="form-status text-sm text-primary-700" role="status"></p>
       </form>
     </div>
@@ -726,7 +726,7 @@ tailwind.config = {
         <div><label class="label block select-none" for="c-topic">I'm interested in</label>
           <select id="c-topic" name="Interested in" class="field block w-full max-w-full"><option>ICT Hardware &amp; Software</option><option>VOIP &amp; Connectivity</option><option>AI &amp; Automation</option><option>Solar Energy Systems</option><option>Installation &amp; Support</option><option>Something else</option></select></div>
         <div><label class="label block select-none" for="c-msg">Message *</label><textarea id="c-msg" name="Message" rows="4" required class="field block w-full max-w-full" placeholder="How can we help?"></textarea></div>
-        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 2 + 2? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Send Message <i class="fas fa-paper-plane text-sm"></i></button>
+        <div class="vpc-spam-check"><label for="vpc-spam" class="label block select-none">Spam check: what is 8 + 4? *</label><input id="vpc-spam" type="text" inputmode="numeric" name="antispam_answer" required autocomplete="off" placeholder="Your answer" class="field block w-full max-w-full"></div><button type="submit" class="btn-violet w-full rounded-full py-4 font-bold inline-flex items-center justify-center gap-2">Send Message <i class="fas fa-paper-plane text-sm"></i></button>
         <p class="form-status text-sm text-primary-700" role="status"></p>
       </form>
     </div>
@@ -862,7 +862,7 @@ tailwind.config = {
 <script>
 (function(){
   var _lt=Date.now();
-  var _ans=4;
+  var _ans=12;
   document.querySelectorAll('form').forEach(function(f){
     f.addEventListener('submit',function(e){
       var hp=f.querySelector('[name="website_url_hp"]');
